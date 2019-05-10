@@ -30,7 +30,8 @@ A final datasets is presented:
 For each record in 'subjectActivity_Summary', it is provided:
 ---
 - 561-feature vectors with time and frequency domain variables are reduced to only the mean and standard deviation for each measurement, 66 features remain.The remaining 66 features are grouped by activityID and subjectID then aggregated by mean of activity measures
-- Its activity label, 'activityID'
+- Its activity key, 'activityID'
+- Its activity label, 'activity_name'
 - An identifier of the subject who carried out the experiment, 'subjectID'
 
 The dataset includes the following files:
