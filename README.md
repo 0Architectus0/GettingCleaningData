@@ -27,13 +27,7 @@ A final datasets is presented:
 1. subjectActivity_Summary 
 
 
-In 'trainTest_meanStd_Activities', for each record it is provided:
----------
- 
-- Its activity label, 'activityID'
-- An identifier of the subject who carried out the experiment, 'subjectID'
-
-In 'subjectActivity_Summary', for each record it is provided:
+For each record in 'subjectActivity_Summary', it is provided:
 ---
 - 561-feature vectors with time and frequency domain variables are reduced to only the mean and standard deviation for each measurement, 66 features remain.The remaining 66 features are grouped by activityID and subjectID then aggregated by mean of activity measures
 - Its activity label, 'activityID'
