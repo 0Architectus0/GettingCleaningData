@@ -23,28 +23,25 @@ Composed r script criteria given as:
 
 Script downloads the data from the link provided; merges and transforms datasets as instructed.  
 
-Two datasets are presented:
-1. trainTest_meanStd_Activities
-2. subjectActivity_Summary 
+A final datasets is presented:
+1. subjectActivity_Summary 
 
 
 In 'trainTest_meanStd_Activities', for each record it is provided:
 ---------
-- 561-feature vectors with time and frequency domain variables reduced to only the mean and standard deviation for each measurement, 66 remaining features. 
+ 
 - Its activity label, 'activityID'
 - An identifier of the subject who carried out the experiment, 'subjectID'
 
 In 'subjectActivity_Summary', for each record it is provided:
 ---
-- 66 remaining features grouped by activityID and subjectID then aggregated by mean of activity
+- 561-feature vectors with time and frequency domain variables are reduced to only the mean and standard deviation for each measurement, 66 features remain.The remaining 66 features are grouped by activityID and subjectID then aggregated by mean of activity measures
 - Its activity label, 'activityID'
 - An identifier of the subject who carried out the experiment, 'subjectID'
 
 The dataset includes the following files:
 ---
 - 'README.md'
-
-- 'trainTest_meanStd_Activities.txt': .
 
 - 'subjectActivity_Summary.txt': independent tidy data set with the average of each variable for each activity and each subject.
 
