@@ -11,7 +11,7 @@ Features
 =================
 subjectID
 activityID
-
+activity_name
 tBodyAcc-mean()-X
 tBodyAcc-mean()-Y
 tBodyAcc-mean()-Z
