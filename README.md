@@ -37,6 +37,8 @@ The dataset includes the following files:
 ---
 - 'README.md'
 
+- 'CODEBOOK.txt'
+
 - 'subjectActivity_Summary.txt': independent tidy data set with the average of each variable for each activity and each subject.
 
 - 'run_analysis.r': 
