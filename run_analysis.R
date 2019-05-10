@@ -67,9 +67,7 @@ trainTest_meanStd_Activities <- bind_cols(trainfile_list) %>%
         .[,ifelse(regexpr('*ID|mean[()]|*std[()]*', colnames(.) ) > 0 , TRUE, FALSE) ] %>%
         # summmarize dataset by activity ID, subject ID, and mean of each feature 
         aggregate(., list( .$activityID, .$subjectID), mean) %>%
-        select(., c(-1,-2)) 
+        select(., c(-1,-2))
 
-# write.table(trainTest_meanStd_Activities, file = "trainTest_meanStd_Activities.txt", row.names = FALSE, col.names = TRUE)
-
-
-  
+# Create *.txt output file
+write.table(trainTest_meanStd_Activities, file = "trainTest_meanStd_Activities.txt", row.names = FALSE, col.names = TRUE)
