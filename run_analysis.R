@@ -55,7 +55,7 @@ if (!'dplyr' %in% installed.packages() ){
   install.packages('dplyr', dependencies = TRUE)
 }
 
-library('dplyr')
+library(dplyr)
 
 # merge datasets
 trainTest_meanStd_Activities <- bind_cols(trainfile_list) %>%
@@ -67,7 +67,13 @@ trainTest_meanStd_Activities <- bind_cols(trainfile_list) %>%
         .[,ifelse(regexpr('*ID|mean[()]|*std[()]*', colnames(.) ) > 0 , TRUE, FALSE) ] %>%
         # summmarize dataset by activity ID, subject ID, and mean of each feature 
         aggregate(., list( .$activityID, .$subjectID), mean) %>%
-        select(., c(-1,-2))
-
-# Create *.txt output file
+        # append acctvity names      
+        left_join(., label_list$activity_labels.txt, by = c( 'activityID' = 'V1')) %>%
+        # remove groups created by agg function
+        select(., c(-1,-2)) %>%
+        # reorder data set
+        select(., c(1,2,length(.), 3:(length(.)-1) ) ) %>%
+        # rename activty name
+        rename('activty_name' = "V2")
+  
 write.table(trainTest_meanStd_Activities, file = "trainTest_meanStd_Activities.txt", row.names = FALSE, col.names = TRUE)
